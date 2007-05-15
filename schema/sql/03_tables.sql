@@ -9,7 +9,8 @@ create table users (
 	email varchar(80) default null,
 	level enum ('god', 'admin', 'user') default 'user',
 	status enum ('ok', 'deleted', 'banned') default 'ok',
-	subcription datetime default null,
+	subscription datetime default null,
+	unique(username),
 	primary key (user_id)
 );
 
