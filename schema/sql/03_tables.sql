@@ -1,11 +1,11 @@
-drop table if exists user;
-create table user (
+drop table if exists users;
+create table users (
 	user_id int unsigned not null auto_increment,
 	username varchar(20) not null,
 	password varchar(20) default null,
-	first_name varchar(20) default null,
-	middle_name varchar(20) default null,
-	last_name varchar(20) default null,
+	firstname varchar(20) default null,
+	middlename varchar(20) default null,
+	lastname varchar(20) default null,
 	email varchar(80) default null,
 	level enum ('god', 'admin', 'user') default 'user',
 	status enum ('ok', 'deleted', 'banned') default 'ok',
@@ -13,8 +13,8 @@ create table user (
 	primary key (user_id)
 );
 
-drop table if exists perfil;
-create table perfil (
+drop table if exists profiles;
+create table profiles (
 	user_id int unsigned not null,
 	photo_id int unsigned not null,
 	homepage varchar(120) default null,
